@@ -1,0 +1,14 @@
+.collections-list {
+  padding: 10px 15px;
+}
+.collections-item {
+  margin: 8px 0;
+  font-size: 14px;
+}
+.collections-item a {
+  color: #42b983;
+  text-decoration: none;
+}
+.collections-item a:hover {
+  color: #359469;
+}
