@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>超详细Hexo+Github Pages搭建个人博客教程</title>
+      <title>Git密钥</title>
       <link href="/posts/df31.html"/>
       <url>/posts/df31.html</url>
       
-        <content type="html"><![CDATA[<h2 id="一、前置准备"><a href="#一、前置准备" class="headerlink" title="一、前置准备"></a>一、前置准备</h2><p>1.首先准备一个 <code>github</code> 账号，没有就去注册一个</p><p>2.本次是基于 <code>git</code> 进行部署，所以首先安装一个 <code>git</code>，链接: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p><p>3.安装 <code>node.js</code> ，官网链接： &lt;Node.js — Download Node.js®&gt;</p><p>4.安装这两个，一般都会自动配置 <code>path</code>，配置这个目的是可以在任何路径下使用 <code>git</code> 和 <code>node.js</code>，如果没有配置环境变量，可以去配置一下。测试安装是否成功</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># win + r 调出 cmd 命令行窗口，然后按照示例输入</span><br><span class="line"># 如果出现版本号，说明已经安装成功了</span><br><span class="line">C:\Users\xingzhu&gt;node -v</span><br><span class="line">v18.16.1</span><br><span class="line"></span><br><span class="line">C:\Users\xingzhu&gt;git --version</span><br><span class="line">git version 2.39.0.windows.2</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><h4 id="1-在blog文件夹下打开git输入"><a href="#1-在blog文件夹下打开git输入" class="headerlink" title="1.在blog文件夹下打开git输入"></a>1.在<code>blog</code>文件夹下打开<code>git</code>输入</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;注册github时使用的邮箱&quot;</span><br><span class="line">git config --global user.name &quot;github的用户名&quot;</span><br></pre></td></tr></table></figure><h4 id="2-生成git公钥"><a href="#2-生成git公钥" class="headerlink" title="2.生成git公钥"></a>2.生成<code>git</code>公钥</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;you email@126.com&quot;</span><br></pre></td></tr></table></figure><p>提示输入<code>passphrase</code>时可直接回车<br>使用记事本打开<code>id_rsa.pub</code>复制内容文件在<code>C:\Users\你的用户名\.ssh</code>目录下</p><p>进入<code>github</code>登录点击头像→Settings→SSH and GPG keys→New SSH key→在Title中输入hexo博客在key的文本框中输入复制的内容→Add SSH key</p><h4 id="3-在Git-Bash中输入"><a href="#3-在Git-Bash中输入" class="headerlink" title="3.在Git Bash中输入"></a>3.在<code>Git Bash</code>中输入</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p><code>出现Hi 用户名! You’ve successfully authenticated, but GitHub does not provide shell access.则证明成功！</code></p><h4 id="4-打开-config-yml进行修改"><a href="#4-打开-config-yml进行修改" class="headerlink" title="4.打开_config.yml进行修改"></a>4.打开<code>_config.yml</code>进行修改</h4><p>补全如下代码<code> repo</code>即你的仓库<code>https</code>地址</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:your_name/your_name.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure><p>其中<code>your_name</code>需要替换为你的<code>github</code>的账号</p><p>现在需要执行以下命令 就可以发布自己的博客了。每次新建完文章之后部署，也是相同命令</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean         # 清除本地缓存</span><br><span class="line">hexo g             # 重新生成静态页面</span><br><span class="line">hexo d             # 部署到git</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -44,106 +44,6 @@
             <tag> 二次元 </tag>
             
             <tag> 狂赌之渊 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>公告栏计时器</title>
-      <link href="/posts/b26f.html"/>
-      <url>/posts/b26f.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ol><li>在<code>\themes\butterfly\source\js</code>目录下创建一个<code>timing.js</code>文件，并将如下代码写入该文件：</li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let oSpan = document.getElementsByTagName(&quot;timing&quot;)[0];</span><br><span class="line">let localhostTime = new Date();//获取页面打开的时间</span><br><span class="line">function tow(n) &#123;</span><br><span class="line">    return n &gt;= 0 &amp;&amp; n &lt; 10 ? &#x27;0&#x27; + n : &#x27;&#x27; + n;</span><br><span class="line">&#125;</span><br><span class="line">setInterval(function () &#123;</span><br><span class="line">    let goTime = new Date();//获取动态时间</span><br><span class="line">    let diffTime = goTime.getTime() - localhostTime.getTime();</span><br><span class="line">    var second = Math.floor(diffTime / 1000);//未来时间距离现在的秒数</span><br><span class="line">    var day = Math.floor(second / 86400);//整数部分代表的是天；一天有24*60*60=86400秒 ；</span><br><span class="line">    second = second % 86400;//余数代表剩下的秒数；</span><br><span class="line">    var hour = Math.floor(second / 3600);//整数部分代表小时；</span><br><span class="line">    second %= 3600; //余数代表 剩下的秒数；</span><br><span class="line">    var minute = Math.floor(second / 60);</span><br><span class="line">    second %= 60;</span><br><span class="line">    // var str = tow(day) + &#x27;&lt;span class=&quot;time&quot;&gt;天&lt;/span&gt;&#x27;</span><br><span class="line">    //     + tow(hour) + &#x27;&lt;span class=&quot;time&quot;&gt;小时&lt;/span&gt;&#x27;</span><br><span class="line">    //     + tow(minute) + &#x27;&lt;span class=&quot;time&quot;&gt;分钟&lt;/span&gt;&#x27;</span><br><span class="line">    //     + tow(second) + &#x27;&lt;span class=&quot;time&quot;&gt;秒&lt;/span&gt;&#x27;;</span><br><span class="line">    var str = tow(hour) + &#x27;&lt;span class=&quot;time&quot;&gt;小时&lt;/span&gt;&#x27;</span><br><span class="line">        + tow(minute) + &#x27;&lt;span class=&quot;time&quot;&gt;分钟&lt;/span&gt;&#x27;</span><br><span class="line">        + tow(second) + &#x27;&lt;span class=&quot;time&quot;&gt;秒&lt;/span&gt;&#x27;;</span><br><span class="line">    oSpan.innerHTML = &quot;您已浏览网页&quot; + str;</span><br><span class="line">&#125;, 1000)</span><br></pre></td></tr></table></figure><ol start="2"><li>找到主题配置文件<code>_config.butterfly.yml</code>，在<code>inject</code>的<code>bottom</code>处引入该js文件：</li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">inject:</span><br><span class="line">  bottom:</span><br><span class="line">  - &lt;script src=&quot;/js/timing.js&quot;&gt;&lt;/script&gt; # 公告栏计时器插件</span><br></pre></td></tr></table></figure><ol start="3"><li><p>在<code>\themes\butterfly\layout\includes\widget</code>目录下找到<code>card_announcement.pug</code>文件，添加<code>timing</code>（注意缩进）：<br><img src="/img/blog1.png"></p></li><li><p>重新部署，启动，就可以看到效果啦。</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo小组件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>那年今日</title>
-      <link href="/posts/cf95.html"/>
-      <url>/posts/cf95.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>效果如下：<br><img src="/img/today.png"></p><h3 id="NPM-插件安装的部署方法："><a href="#NPM-插件安装的部署方法：" class="headerlink" title="NPM 插件安装的部署方法："></a>NPM 插件安装的部署方法：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo-history-calendar --save</span><br><span class="line"></span><br><span class="line"># 或者</span><br><span class="line"></span><br><span class="line">cnpm i hexo-history-calendar --save</span><br></pre></td></tr></table></figure><p>注意，一定要加<code>--save</code>，不然本地预览的时候可能不会显示！！！</p><h3 id="新增网站根目录-config-配置项-不是主题的-："><a href="#新增网站根目录-config-配置项-不是主题的-：" class="headerlink" title="新增网站根目录_config 配置项(不是主题的)："></a>新增网站根目录_config 配置项(不是主题的)：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">history_calendar:</span><br><span class="line">  priority: 4</span><br><span class="line">  enable: true</span><br><span class="line">  enable_page: all</span><br><span class="line">  layout:</span><br><span class="line">    type: class</span><br><span class="line">    name: sticky_layout</span><br><span class="line">    index: 0</span><br><span class="line">  temple_html: &#x27;&lt;div class=&quot;card-widget card-history&quot;&gt;&lt;div class=&quot;card-content&quot;&gt;&lt;div class=&quot;item-headline&quot;&gt;&lt;i class=&quot;fas fa-clock fa-spin&quot;&gt;&lt;/i&gt;&lt;span&gt;那年今日&lt;/span&gt;&lt;/div&gt;&lt;div id=&quot;history-baidu&quot; style=&quot;height: 100px;overflow: hidden&quot;&gt;&lt;div class=&quot;history_swiper-container&quot; id=&quot;history-container&quot; style=&quot;width: 100%;height: 100%&quot;&gt;&lt;div class=&quot;swiper-wrapper&quot; id=&quot;history_container_wrapper&quot; style=&quot;height:20px&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&#x27;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo小组件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>今日诗词添加</title>
-      <link href="/posts/a07c.html"/>
-      <url>/posts/a07c.html</url>
-      
-        <content type="html"><![CDATA[<p>本文将介绍如何增添随机诗词的展示。</p><p>具体效果如下：</p><div class="poem-wrap">  <div class="poem-border poem-left"></div>  <div class="poem-border poem-right"></div>    <h2>念两句诗</h2>    <p id="poem">挑选中...</p>    <p id="info">  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>  <script type="text/javascript">    jinrishici.load(function(result) {      poem.innerHTML = result.data.content      info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'      document.getElementById("poem").value(poem);      document.getElementById("info").value(info);    });  </script></div><blockquote><p>刷新页面会有变化哦~~~~</p></blockquote><hr/><ol><li><p>输入命令<code>hexo n page &quot;Message&quot;</code>在<code>\source</code>文件夹下新建一个<code>Message</code>文件夹（名字可以自定义）</p></li><li><p>进入Message文件夹，编辑<code>index.md</code>文件，添加如下代码：</p></li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;poem-wrap&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;poem-border poem-left&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;poem-border poem-right&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;h&gt;念两句诗&lt;/h&gt;</span><br><span class="line">    &lt;p id=&quot;poem&quot;&gt;挑选中...&lt;/p&gt;</span><br><span class="line">    &lt;p id=&quot;info&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    jinrishici.load(function(result) &#123;</span><br><span class="line">      poem.innerHTML = result.data.content</span><br><span class="line">      info.innerHTML = &#x27;【&#x27; + result.data.origin.dynasty + &#x27;】&#x27; + result.data.origin.author + &#x27;《&#x27; + result.data.origin.title + &#x27;》&#x27;</span><br><span class="line">      document.getElementById(&quot;poem&quot;).value(poem);</span><br><span class="line">      document.getElementById(&quot;info&quot;).value(info);  </span><br><span class="line">  &#125;);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><ol><li>在<code>\themes\butterfly\source\css\index.styl</code>中添加以下代码（直接在底部添加）：</li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/*诗*/</span><br><span class="line">.poem-wrap &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 730px;</span><br><span class="line">    max-width: 80%;</span><br><span class="line">    border: 2px solid #797979;</span><br><span class="line">    border-top: none;</span><br><span class="line">    text-align: center;</span><br><span class="line">    margin: 80px auto;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-wrap h &#123;</span><br><span class="line">    font-size: 40px;</span><br><span class="line">    font-style:oblique;</span><br><span class="line">    position: relative;</span><br><span class="line">    margin-top: -40px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    letter-spacing: 4px;</span><br><span class="line">    color: #797979</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-wrap p &#123;</span><br><span class="line">    width: 70%;</span><br><span class="line">    margin: auto;</span><br><span class="line">    line-height: 30px;</span><br><span class="line">    color: #797979;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-wrap p#poem &#123;</span><br><span class="line">    font-size: 22px;</span><br><span class="line">    margin: 15px auto;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-wrap p#info &#123;</span><br><span class="line">    font-size: 15px;</span><br><span class="line">    margin: 15px auto;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-border &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    height: 2px;</span><br><span class="line">    width: 27%;</span><br><span class="line">    background-color: #797979;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-right &#123;</span><br><span class="line">    right: 0;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.poem-left &#123;</span><br><span class="line">    left: 0;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@media (max-width: 685px) &#123;</span><br><span class="line">    .poem-border &#123;</span><br><span class="line">        width: 18%;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@media (max-width: 500px) &#123;</span><br><span class="line">    .poem-wrap &#123;</span><br><span class="line">        margin-top: 60px;</span><br><span class="line">        margin-bottom: 20px;</span><br><span class="line">        border-top: 2px solid #797979;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    .poem-wrap h &#123;</span><br><span class="line">        margin: 20px 6px;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    .poem-border &#123;</span><br><span class="line">        display: none;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="4"><li>找到主题配置文件<code>_config.butterfly.yml</code>，在<code>menu</code>位置中添加留言页面的连接：</li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  留言: /Message/ || fas fa-comment</span><br></pre></td></tr></table></figure><ol start="5"><li>重新部署，就可以看到效果啦。</li></ol><hr/><p>这里调用的是<code>今日诗词API</code>，是一个可以返回一句古诗词名句的接口。</p><p>它可以通过图片和 JSON 格式调用。今日诗词 API 根据不同地点、时间、节日、季节、天气、景观、城市进行智能推荐。</p><p>访问链接：<a href="https://www.jinrishici.com/">https://www.jinrishici.com/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo小组件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Butterfly添加侧边栏电子钟</title>
-      <link href="/posts/d1d.html"/>
-      <url>/posts/d1d.html</url>
-      
-        <content type="html"><![CDATA[<p>效果如下所示<br><img src="/img/clock.png"></p><p>1.如果有安装店长的插件版侧边栏电子钟（与店长的电子钟冲突），在博客根目录[Blogroot]下打开终端，运行以下指令</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 卸载原版电子钟</span><br><span class="line">npm uninstall hexo-butterfly-clock</span><br></pre></td></tr></table></figure><p>2.安装插件,在博客根目录[Blogroot]下打开终端，运行以下指令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-butterfly-clock-anzhiyu --save</span><br></pre></td></tr></table></figure><p>3.添加配置信息，以下为写法示例在站点配置文件_config.yml或者主题配置文件_config.butterfly.yml中添加</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># electric_clock</span><br><span class="line"># see https://anzhiy.cn/posts/fc18.html</span><br><span class="line">electric_clock:</span><br><span class="line">  enable: true # 开关</span><br><span class="line">  priority: 5 #过滤器优先权</span><br><span class="line">  enable_page: all # 应用页面</span><br><span class="line">  exclude:</span><br><span class="line">  # - /posts/</span><br><span class="line">  # - /about/</span><br><span class="line">  layout: # 挂载容器类型</span><br><span class="line">    type: class</span><br><span class="line">    name: sticky_layout</span><br><span class="line">    index: 0</span><br><span class="line">  loading: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif #加载动画自定义</span><br><span class="line">  clock_css: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css</span><br><span class="line">  clock_js: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js</span><br><span class="line">  ip_api: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0</span><br><span class="line">  qweather_key: # 和风天气key</span><br><span class="line">  gaud_map_key: # 高得地图web服务key</span><br><span class="line">  default_rectangle: false # 开启后将一直显示rectangle位置的天气，否则将获取访问者的地理位置与天气</span><br><span class="line">  rectangle: 112.982279,28.19409 # 获取访问者位置失败时会显示该位置的天气，同时该位置为开启default_rectangle后的位置</span><br></pre></td></tr></table></figure><p>其中qweather_key 和gaud_map_key 最好自己去申请对应的 api key，默认使用我自己的，可能会被限制，不保证可靠性。</p><p>qweather_key申请地址: <a href="https://id.qweather.com/#/login">https://id.qweather.com/#/login</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo小组件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
             
         </tags>
       
