@@ -4,6 +4,108 @@
   
     
     <entry>
+      <title>今日诗词侧边栏</title>
+      <link href="/posts/2d63.html"/>
+      <url>/posts/2d63.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><h4 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h4><p>主题新建<code>themes/butterfly/layout/includes/widget/card_poem.pug</code>，内容如下</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#card-poem.card-widget</span><br><span class="line">    #poem_sentence</span><br><span class="line">    #poem_info</span><br><span class="line">        #poem_dynasty</span><br><span class="line">        #poem_author</span><br><span class="line">script(src=&#x27;https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/jinrishici.js&#x27;, charset=&#x27;utf-8&#x27;)</span><br><span class="line">script(type=&#x27;text/javascript&#x27;).</span><br><span class="line">  jinrishici.load(function(result) &#123;</span><br><span class="line">  var sentence = document.querySelector(&quot;#poem_sentence&quot;)</span><br><span class="line">  var author = document.querySelector(&quot;#poem_author&quot;)</span><br><span class="line">  var dynasty = document.querySelector(&quot;#poem_dynasty&quot;)</span><br><span class="line"></span><br><span class="line">  var sentenceText = result.data.content</span><br><span class="line">  sentenceText = sentenceText.substr(0, sentenceText.length - 1);</span><br><span class="line">  sentence.innerHTML = sentenceText</span><br><span class="line">  dynasty.innerHTML = result.data.origin.dynasty</span><br><span class="line">  author.innerHTML = result.data.origin.author + &#x27;《&#x27; + result.data.origin.title + &#x27;》&#x27;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure><h4 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h4><p>在<code>themes/butterfly/layout/includes/widget/index.pug</code>中你需要的位置添加以下内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!=partial(&#x27;includes/widget/card_poem&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br></pre></td></tr></table></figure><p>填写示例，可以在俩个<br><img src="/img/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D.png"></p><h4 id="引入css"><a href="#引入css" class="headerlink" title="引入css"></a>引入css</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/poem.css&quot;&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>本地搜索</title>
+      <link href="/posts/ba7e.html"/>
+      <url>/posts/ba7e.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>你需要安装 hexo-generator-search，根据它的文档去做相应配置</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><h4 id="设置主题配置文件"><a href="#设置主题配置文件" class="headerlink" title="设置主题配置文件"></a>设置主题配置文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  preload: false</span><br><span class="line">  CDN:</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字数统计</title>
+      <link href="/posts/337a.html"/>
+      <url>/posts/337a.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>要为 AnZhiYu 配上字数统计特性, 你需要如下几个步骤:</p><p>打开 hexo 工作目录</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br><span class="line">或者</span><br><span class="line">yarn add hexo-wordcount</span><br></pre></td></tr></table></figure><p>修改 主题配置文件:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安知鱼主题配置</title>
+      <link href="/posts/970f.html"/>
+      <url>/posts/970f.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><h4 id="方式一-Github-推荐"><a href="#方式一-Github-推荐" class="headerlink" title="方式一(Github 推荐):"></a>方式一(Github 推荐):</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b main https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu</span><br></pre></td></tr></table></figure><p>如遇安装不上可以使用以下<code>url</code>代理安装</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b main https://ghproxy.com/https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu</span><br></pre></td></tr></table></figure><h4 id="方式二-Release-推荐"><a href="#方式二-Release-推荐" class="headerlink" title="方式二(Release 推荐):"></a>方式二(Release 推荐):</h4><p>下载 最新 <code>release </code>版本 解压到<code>themes</code>目录，并将解压出的文件夹重命名为<code> anzhiyu</code>。</p><h4 id="方式三-npm安装"><a href="#方式三-npm安装" class="headerlink" title="方式三(npm安装):"></a>方式三(npm安装):</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo-theme-anzhiyu</span><br></pre></td></tr></table></figure><h3 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h3><p>打开 Hexo 根目录下的 <code>config.yml</code>, 找到以下配置项，把主题改为<code>anzhiyu</code></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: anzhiyu</span><br></pre></td></tr></table></figure><h3 id="安装-pug-和-stylus-渲染插件"><a href="#安装-pug-和-stylus-渲染插件" class="headerlink" title="安装 pug 和 stylus 渲染插件"></a>安装 pug 和 stylus 渲染插件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><p>无法安装可以使用<code>cnpm</code>进行安装</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save --registry=http://registry.npmmirror.com</span><br></pre></td></tr></table></figure><h3 id="覆盖配置"><a href="#覆盖配置" class="headerlink" title="覆盖配置"></a>覆盖配置</h3><h4 id="macos-linux-在博客根目录运行"><a href="#macos-linux-在博客根目录运行" class="headerlink" title="macos&#x2F;linux 在博客根目录运行"></a>macos&#x2F;linux 在博客根目录运行</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp -rf ./themes/anzhiyu/_config.yml ./_config.anzhiyu.yml</span><br></pre></td></tr></table></figure><h3 id="本地启动-hexo"><a href="#本地启动-hexo" class="headerlink" title="本地启动 hexo"></a>本地启动 hexo</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> anzhiyu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> anzhiyu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git密钥</title>
       <link href="/posts/df31.html"/>
       <url>/posts/df31.html</url>
