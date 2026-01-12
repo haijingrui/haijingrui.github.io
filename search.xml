@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>今日诗词侧边栏</title>
+      <link href="/posts/2d63.html"/>
+      <url>/posts/2d63.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><h4 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h4><p>主题新建<code>themes/butterfly/layout/includes/widget/card_poem.pug</code>，内容如下</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#card-poem.card-widget</span><br><span class="line">    #poem_sentence</span><br><span class="line">    #poem_info</span><br><span class="line">        #poem_dynasty</span><br><span class="line">        #poem_author</span><br><span class="line">script(src=&#x27;https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/jinrishici.js&#x27;, charset=&#x27;utf-8&#x27;)</span><br><span class="line">script(type=&#x27;text/javascript&#x27;).</span><br><span class="line">  jinrishici.load(function(result) &#123;</span><br><span class="line">  var sentence = document.querySelector(&quot;#poem_sentence&quot;)</span><br><span class="line">  var author = document.querySelector(&quot;#poem_author&quot;)</span><br><span class="line">  var dynasty = document.querySelector(&quot;#poem_dynasty&quot;)</span><br><span class="line"></span><br><span class="line">  var sentenceText = result.data.content</span><br><span class="line">  sentenceText = sentenceText.substr(0, sentenceText.length - 1);</span><br><span class="line">  sentence.innerHTML = sentenceText</span><br><span class="line">  dynasty.innerHTML = result.data.origin.dynasty</span><br><span class="line">  author.innerHTML = result.data.origin.author + &#x27;《&#x27; + result.data.origin.title + &#x27;》&#x27;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure><h4 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h4><p>在<code>themes/butterfly/layout/includes/widget/index.pug</code>中你需要的位置添加以下内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!=partial(&#x27;includes/widget/card_poem&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br></pre></td></tr></table></figure><p>填写示例，可以在俩个<br><img src="/img/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D.png"></p><h4 id="引入css"><a href="#引入css" class="headerlink" title="引入css"></a>引入css</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/poem.css&quot;&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>本地搜索</title>
+      <link href="/posts/ba7e.html"/>
+      <url>/posts/ba7e.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>你需要安装 hexo-generator-search，根据它的文档去做相应配置</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><h4 id="设置主题配置文件"><a href="#设置主题配置文件" class="headerlink" title="设置主题配置文件"></a>设置主题配置文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  preload: false</span><br><span class="line">  CDN:</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字数统计</title>
+      <link href="/posts/337a.html"/>
+      <url>/posts/337a.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><p>要为 AnZhiYu 配上字数统计特性, 你需要如下几个步骤:</p><p>打开 hexo 工作目录</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br><span class="line">或者</span><br><span class="line">yarn add hexo-wordcount</span><br></pre></td></tr></table></figure><p>修改 主题配置文件:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安知鱼主题配置</title>
+      <link href="/posts/970f.html"/>
+      <url>/posts/970f.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><h4 id="方式一-Github-推荐"><a href="#方式一-Github-推荐" class="headerlink" title="方式一(Github 推荐):"></a>方式一(Github 推荐):</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b main https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu</span><br></pre></td></tr></table></figure><p>如遇安装不上可以使用以下<code>url</code>代理安装</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b main https://ghproxy.com/https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu</span><br></pre></td></tr></table></figure><h4 id="方式二-Release-推荐"><a href="#方式二-Release-推荐" class="headerlink" title="方式二(Release 推荐):"></a>方式二(Release 推荐):</h4><p>下载 最新 <code>release </code>版本 解压到<code>themes</code>目录，并将解压出的文件夹重命名为<code> anzhiyu</code>。</p><h4 id="方式三-npm安装"><a href="#方式三-npm安装" class="headerlink" title="方式三(npm安装):"></a>方式三(npm安装):</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo-theme-anzhiyu</span><br></pre></td></tr></table></figure><h3 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h3><p>打开 Hexo 根目录下的 <code>config.yml</code>, 找到以下配置项，把主题改为<code>anzhiyu</code></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: anzhiyu</span><br></pre></td></tr></table></figure><h3 id="安装-pug-和-stylus-渲染插件"><a href="#安装-pug-和-stylus-渲染插件" class="headerlink" title="安装 pug 和 stylus 渲染插件"></a>安装 pug 和 stylus 渲染插件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><p>无法安装可以使用<code>cnpm</code>进行安装</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save --registry=http://registry.npmmirror.com</span><br></pre></td></tr></table></figure><h3 id="覆盖配置"><a href="#覆盖配置" class="headerlink" title="覆盖配置"></a>覆盖配置</h3><h4 id="macos-linux-在博客根目录运行"><a href="#macos-linux-在博客根目录运行" class="headerlink" title="macos&#x2F;linux 在博客根目录运行"></a>macos&#x2F;linux 在博客根目录运行</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp -rf ./themes/anzhiyu/_config.yml ./_config.anzhiyu.yml</span><br></pre></td></tr></table></figure><h3 id="本地启动-hexo"><a href="#本地启动-hexo" class="headerlink" title="本地启动 hexo"></a>本地启动 hexo</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> anzhiyu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> anzhiyu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git密钥</title>
+      <link href="/posts/df31.html"/>
+      <url>/posts/df31.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><h4 id="1-在blog文件夹下打开git输入"><a href="#1-在blog文件夹下打开git输入" class="headerlink" title="1.在blog文件夹下打开git输入"></a>1.在<code>blog</code>文件夹下打开<code>git</code>输入</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;注册github时使用的邮箱&quot;</span><br><span class="line">git config --global user.name &quot;github的用户名&quot;</span><br></pre></td></tr></table></figure><h4 id="2-生成git公钥"><a href="#2-生成git公钥" class="headerlink" title="2.生成git公钥"></a>2.生成<code>git</code>公钥</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;you email@126.com&quot;</span><br></pre></td></tr></table></figure><p>提示输入<code>passphrase</code>时可直接回车<br>使用记事本打开<code>id_rsa.pub</code>复制内容文件在<code>C:\Users\你的用户名\.ssh</code>目录下</p><p>进入<code>github</code>登录点击头像→Settings→SSH and GPG keys→New SSH key→在Title中输入hexo博客在key的文本框中输入复制的内容→Add SSH key</p><h4 id="3-在Git-Bash中输入"><a href="#3-在Git-Bash中输入" class="headerlink" title="3.在Git Bash中输入"></a>3.在<code>Git Bash</code>中输入</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p><code>出现Hi 用户名! You’ve successfully authenticated, but GitHub does not provide shell access.则证明成功！</code></p><h4 id="4-打开-config-yml进行修改"><a href="#4-打开-config-yml进行修改" class="headerlink" title="4.打开_config.yml进行修改"></a>4.打开<code>_config.yml</code>进行修改</h4><p>补全如下代码<code> repo</code>即你的仓库<code>https</code>地址</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:your_name/your_name.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure><p>其中<code>your_name</code>需要替换为你的<code>github</code>的账号</p><p>现在需要执行以下命令 就可以发布自己的博客了。每次新建完文章之后部署，也是相同命令</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean         # 清除本地缓存</span><br><span class="line">hexo g             # 重新生成静态页面</span><br><span class="line">hexo d             # 部署到git</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>狂赌之渊</title>
+      <link href="/posts/78ed.html"/>
+      <url>/posts/78ed.html</url>
+      
+        <content type="html"><![CDATA[<div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">  <iframe src="//player.bilibili.com/player.html?bvid=BV1o64y167qq&page=1"           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"           scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">  </iframe></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 二次元 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二次元 </tag>
+            
+            <tag> 狂赌之渊 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>拼音链接</title>
+      <link href="/posts/ab5b.html"/>
+      <url>/posts/ab5b.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="中文链接转拼音（建议安装）"><a href="#中文链接转拼音（建议安装）" class="headerlink" title="中文链接转拼音（建议安装）"></a>中文链接转拼音（建议安装）</h4><p>使用 hexo-permalink-pinyin 的 Hexo 插件使在生成文章时生成中文拼音的永久链接，安装命令如下：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo-permalink-pinyin --save</span><br></pre></td></tr></table></figure><p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink_pinyin:</span><br><span class="line">  enable: true</span><br><span class="line">  separator: &#x27;-&#x27; # default: &#x27;-&#x27;</span><br></pre></td></tr></table></figure><p>执行 hexo clean &amp;&amp; hexo g 重新生成博客文件，就可以生成拼音链接。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 链接 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>永久链接</title>
+      <link href="/posts/fb4c.html"/>
+      <url>/posts/fb4c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="永久链接"><a href="#永久链接" class="headerlink" title="永久链接"></a>永久链接</h2><h4 id="文章生成永久链接（建议安装）"><a href="#文章生成永久链接（建议安装）" class="headerlink" title="文章生成永久链接（建议安装）"></a>文章生成永久链接（建议安装）</h4><p>使用 hexo-abbrlink 的 Hexo 插件来实现文章生成永久链接，安装命令如下：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure><p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">abbrlink: </span><br><span class="line">    alg: crc16   #算法：</span><br><span class="line">    rep: hex     #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制</span><br></pre></td></tr></table></figure><p>将 _config.yml 文件中的 permalink 的值修改为如下内容：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink</span><br></pre></td></tr></table></figure><p>执行 hexo clean &amp;&amp; hexo g 重新生成博客文件，就可以生成永久链接。生成完后，原 md 文件的 Front-matter 内会增加 abbrlink 字段，值为生成的 ID 。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原文链接: http://example.com/posts/64332.html</span><br><span class="line"></span><br><span class="line">版权声明: 转载请注明出处.</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 链接 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo部署</title>
+      <link href="/posts/d7be.html"/>
+      <url>/posts/d7be.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Hexo-本地部署"><a href="#Hexo-本地部署" class="headerlink" title="Hexo 本地部署"></a>Hexo 本地部署</h3><h4 id="Hexo-是什么？"><a href="#Hexo-是什么？" class="headerlink" title="Hexo 是什么？"></a>Hexo 是什么？</h4><p>Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页。</p><h4 id="一、安装-git"><a href="#一、安装-git" class="headerlink" title="一、安装 git"></a>一、安装 git</h4><p>官网地址：<a href="https://git-scm.com/">https://git-scm.com</a></p><p>1.访问官方网站，下载对应的安装包，进行安装</p><p>2.安装完成后，鼠标右键可以看到：Git Bash Here, 点击后打开</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CRMSH</span><br><span class="line">git --version        # 查看git版本</span><br></pre></td></tr></table></figure><h4 id="二、安装Node-js"><a href="#二、安装Node-js" class="headerlink" title="二、安装Node.js"></a>二、安装Node.js</h4><p>官网地址：<a href="https://nodejs.org/">https://nodejs.org</a></p><p>1.访问nodejs官方网站，下载对应的安装包，进行安装</p><p>2.安装完成后，配置环境变量，并在终端里面输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CRMSH</span><br><span class="line">node -v       # 查看node.js版本</span><br></pre></td></tr></table></figure><h4 id="三、安装hexo"><a href="#三、安装hexo" class="headerlink" title="三、安装hexo"></a>三、安装hexo</h4><h5 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AVRASM</span><br><span class="line">yarn global add hexo-cli # yarn</span><br><span class="line">npm install -g hexo-cli# npm</span><br></pre></td></tr></table></figure><h5 id="局部安装"><a href="#局部安装" class="headerlink" title="局部安装"></a>局部安装</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AVRASM</span><br><span class="line">yarn add hexo# yarn</span><br><span class="line">npm intall hexo # npm</span><br></pre></td></tr></table></figure><h4 id="检查hexo-版本"><a href="#检查hexo-版本" class="headerlink" title="检查hexo 版本"></a>检查hexo 版本</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NGINX</span><br><span class="line">hexo -v       # 查看hexo版本</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm 的下载速度受到网络环境和源服务器的影响，如果存在 npm 命令执行非常慢的情况，可以使用国内的镜像源来加速下载</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ARDUINO</span><br><span class="line">npm config set registry https://registry.npmmirror.com   #切换为淘宝NPM镜像站</span><br><span class="line">npm config set registry https://mirrors.cloud.tencent.com/npm/  # 切换为腾讯镜像</span><br><span class="line">npm config set registry https://registry.npmjs.org  # 切换为官方镜像</span><br></pre></td></tr></table></figure><h4 id="查看镜像使用状态"><a href="#查看镜像使用状态" class="headerlink" title="查看镜像使用状态"></a>查看镜像使用状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ROUTEROS</span><br><span class="line">npm config get registry  # 查看镜像使用状态</span><br></pre></td></tr></table></figure><p>如果返回 <a href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a>, 说明配置的是淘宝镜像</p><p>初始化Hexo<br>新建一个blog文件夹，在这个文件夹中右键点开 Git Bash Here ，输入hexo init 下载相关文件</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CSHARP</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>可以看到博客存放目录里出现了相关文件</p><p><code>hexo项目目录内容如下：</code></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">STYLUS</span><br><span class="line">.</span><br><span class="line"></span><br><span class="line">├── _config.yml ：站点的配置文件，需要备份。</span><br><span class="line">├── themes ：主题文件夹，需要备份。</span><br><span class="line">├── source ：资源文件夹。用来存放图片、Markdown 文档（文章、草稿）、各种页面（分类、关于页面等），需要备份。</span><br><span class="line">├── scaffolds ：文章的模板，需要备份。</span><br><span class="line">├── package.json ：安装包的名称，需要备份。</span><br><span class="line">├── .gitignore ：限定在 push 时哪些文件可以忽略，需要备份 .git ：主题和站点都有，标志这是一个 git 项目，不需要备份。</span><br><span class="line">├── node_modules ：是安装包的目录，在执行 npm install 的时候会重新生成，不需要备份。</span><br><span class="line">├── public ：hexo g 生成的静态网页，将 source 文件夹里的 MarkDown 文档，转换成 index.html，不需要备份。</span><br><span class="line">├── deploy_git ：将 public 文件夹的内容提交到 GitHub 后生成，内容与 public 文件夹基本一致，不需要备份。</span><br><span class="line">├── db.json ：文件，不需要备份。</span><br></pre></td></tr></table></figure><h4 id="生成静态网页"><a href="#生成静态网页" class="headerlink" title="生成静态网页"></a>生成静态网页</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NGINX</span><br><span class="line">hexo g         # 生成静态网页</span><br><span class="line">hexo s         # 本地预览  </span><br><span class="line">hexo clean     # 清除本地缓存</span><br></pre></td></tr></table></figure><p>在本地浏览器访问：<a href="http://localhost:4000/">http://localhost:4000</a></p><h4 id="安装hexo依赖"><a href="#安装hexo依赖" class="headerlink" title="安装hexo依赖"></a>安装hexo依赖</h4><p>安装 Git 部署插件</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ADA</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>butterfly 主题配置</title>
+      <link href="/posts/ec81.html"/>
+      <url>/posts/ec81.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="butterfly-主题配置"><a href="#butterfly-主题配置" class="headerlink" title="butterfly 主题配置"></a>butterfly 主题配置</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>在你的 Hexo 根目录里</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><h4 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h4><p>修改 Hexo 根目录下的 ，把主题改为 _config.ymlbutterfly</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure><h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>如果你没有 pug 以及 stylus 的渲染器，请下载安装：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><h4 id="导航目录"><a href="#导航目录" class="headerlink" title="导航目录"></a>导航目录</h4><p>即设置顶部右上方区域的这块内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Menu 目录</span><br><span class="line">menu:</span><br><span class="line">  首页: / || fas fa-home</span><br><span class="line">  归档: /archives/ || fas fa-archive</span><br><span class="line">  标签: /tags/ || fas fa-tags</span><br><span class="line">  分类: /categories/ || fas fa-folder-open</span><br><span class="line">  友链: /link/ || fas fa-link</span><br><span class="line">  关于: /about/ || fas fa-heart</span><br><span class="line"># 格式如下：</span><br><span class="line"># [标题]: [路径] || [图标]</span><br></pre></td></tr></table></figure><p>这里的目录中，<code>tags</code>、<code>categories</code>、<code>link</code>、<code>about</code>目录默认不存在，需要在CMD窗口中使用命令生成对应页面</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LASSO</span><br><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br><span class="line">hexo new page link</span><br><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><p>之后给创建的页面设置成对应的页面类型</p><h4 id="代码高度限制"><a href="#代码高度限制" class="headerlink" title="代码高度限制"></a>代码高度限制</h4><p>可配置代码高度限制，超出的部分会隐藏，并显示展开按钮。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NIX</span><br><span class="line">highlight_height_limit: false # unit: px</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> butterfly </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

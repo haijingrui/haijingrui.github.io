@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>海人听闻</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2026-01-08T03:03:05.702Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>hjr</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今日诗词侧边栏</title>
+    <link href="http://example.com/posts/2d63.html"/>
+    <id>http://example.com/posts/2d63.html</id>
+    <published>2026-01-08T02:17:18.000Z</published>
+    <updated>2026-01-08T03:03:05.702Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;安装教程&quot;&gt;&lt;a href=&quot;#安装教程&quot; class=&quot;headerlink&quot; title=&quot;安装教程&quot;&gt;&lt;/a&gt;安装教程&lt;/h3&gt;&lt;h4 id=&quot;创建组件&quot;&gt;&lt;a href=&quot;#创建组件&quot; class=&quot;headerlink&quot; title=&quot;创建组件&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本地搜索</title>
+    <link href="http://example.com/posts/ba7e.html"/>
+    <id>http://example.com/posts/ba7e.html</id>
+    <published>2026-01-08T02:04:20.000Z</published>
+    <updated>2026-01-08T03:02:58.420Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;安装插件&quot;&gt;&lt;a href=&quot;#安装插件&quot; class=&quot;headerlink&quot; title=&quot;安装插件&quot;&gt;&lt;/a&gt;安装插件&lt;/h4&gt;&lt;p&gt;你需要安装 hexo-generator-search，根据它的文档去做相应配置&lt;/p&gt;
+&lt;figure class=&quot;hi</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字数统计</title>
+    <link href="http://example.com/posts/337a.html"/>
+    <id>http://example.com/posts/337a.html</id>
+    <published>2026-01-08T01:55:41.000Z</published>
+    <updated>2026-01-08T03:03:37.755Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;字数统计&quot;&gt;&lt;a href=&quot;#字数统计&quot; class=&quot;headerlink&quot; title=&quot;字数统计&quot;&gt;&lt;/a&gt;字数统计&lt;/h2&gt;&lt;p&gt;要为 AnZhiYu 配上字数统计特性, 你需要如下几个步骤:&lt;/p&gt;
+&lt;p&gt;打开 hexo 工作目录&lt;/p&gt;
+&lt;figur</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安知鱼主题配置</title>
+    <link href="http://example.com/posts/970f.html"/>
+    <id>http://example.com/posts/970f.html</id>
+    <published>2026-01-08T01:06:29.000Z</published>
+    <updated>2026-01-08T03:02:48.954Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;主题安装&quot;&gt;&lt;a href=&quot;#主题安装&quot; class=&quot;headerlink&quot; title=&quot;主题安装&quot;&gt;&lt;/a&gt;主题安装&lt;/h3&gt;&lt;h4 id=&quot;方式一-Github-推荐&quot;&gt;&lt;a href=&quot;#方式一-Github-推荐&quot; class=&quot;headerlink</summary>
+      
+    
+    
+    
+    <category term="anzhiyu" scheme="http://example.com/categories/anzhiyu/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="anzhiyu" scheme="http://example.com/tags/anzhiyu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git密钥</title>
+    <link href="http://example.com/posts/df31.html"/>
+    <id>http://example.com/posts/df31.html</id>
+    <published>2026-01-07T02:26:03.000Z</published>
+    <updated>2026-01-08T03:02:25.722Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Git配置&quot;&gt;&lt;a href=&quot;#Git配置&quot; class=&quot;headerlink&quot; title=&quot;Git配置&quot;&gt;&lt;/a&gt;Git配置&lt;/h2&gt;&lt;h4 id=&quot;1-在blog文件夹下打开git输入&quot;&gt;&lt;a href=&quot;#1-在blog文件夹下打开git输入&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>狂赌之渊</title>
+    <link href="http://example.com/posts/78ed.html"/>
+    <id>http://example.com/posts/78ed.html</id>
+    <published>2025-12-24T10:42:18.000Z</published>
+    <updated>2026-01-08T03:03:23.965Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 56.25%;&quot;&gt;
+  &lt;iframe src=&quot;//player.bilibili.com/player.html?bvid=BV1o</summary>
+      
+    
+    
+    
+    <category term="二次元" scheme="http://example.com/categories/%E4%BA%8C%E6%AC%A1%E5%85%83/"/>
+    
+    
+    <category term="二次元" scheme="http://example.com/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/"/>
+    
+    <category term="狂赌之渊" scheme="http://example.com/tags/%E7%8B%82%E8%B5%8C%E4%B9%8B%E6%B8%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拼音链接</title>
+    <link href="http://example.com/posts/ab5b.html"/>
+    <id>http://example.com/posts/ab5b.html</id>
+    <published>2025-11-19T08:42:03.000Z</published>
+    <updated>2026-01-08T03:03:14.509Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;中文链接转拼音（建议安装）&quot;&gt;&lt;a href=&quot;#中文链接转拼音（建议安装）&quot; class=&quot;headerlink&quot; title=&quot;中文链接转拼音（建议安装）&quot;&gt;&lt;/a&gt;中文链接转拼音（建议安装）&lt;/h4&gt;&lt;p&gt;使用 hexo-permalink-pinyin 的</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="链接" scheme="http://example.com/tags/%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>永久链接</title>
+    <link href="http://example.com/posts/fb4c.html"/>
+    <id>http://example.com/posts/fb4c.html</id>
+    <published>2025-11-19T08:37:18.000Z</published>
+    <updated>2026-01-08T03:03:31.652Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;永久链接&quot;&gt;&lt;a href=&quot;#永久链接&quot; class=&quot;headerlink&quot; title=&quot;永久链接&quot;&gt;&lt;/a&gt;永久链接&lt;/h2&gt;&lt;h4 id=&quot;文章生成永久链接（建议安装）&quot;&gt;&lt;a href=&quot;#文章生成永久链接（建议安装）&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="链接" scheme="http://example.com/tags/%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo部署</title>
+    <link href="http://example.com/posts/d7be.html"/>
+    <id>http://example.com/posts/d7be.html</id>
+    <published>2025-11-18T08:37:22.000Z</published>
+    <updated>2026-01-08T03:02:39.977Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Hexo-本地部署&quot;&gt;&lt;a href=&quot;#Hexo-本地部署&quot; class=&quot;headerlink&quot; title=&quot;Hexo 本地部署&quot;&gt;&lt;/a&gt;Hexo 本地部署&lt;/h3&gt;&lt;h4 id=&quot;Hexo-是什么？&quot;&gt;&lt;a href=&quot;#Hexo-是什么？&quot; class</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>butterfly 主题配置</title>
+    <link href="http://example.com/posts/ec81.html"/>
+    <id>http://example.com/posts/ec81.html</id>
+    <published>2025-11-18T06:57:09.000Z</published>
+    <updated>2026-01-08T02:57:57.712Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;butterfly-主题配置&quot;&gt;&lt;a href=&quot;#butterfly-主题配置&quot; class=&quot;headerlink&quot; title=&quot;butterfly 主题配置&quot;&gt;&lt;/a&gt;butterfly 主题配置&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot;</summary>
+      
+    
+    
+    
+    <category term="butterfly" scheme="http://example.com/categories/butterfly/"/>
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="butterfly" scheme="http://example.com/tags/butterfly/"/>
+    
+  </entry>
+  
+</feed>
